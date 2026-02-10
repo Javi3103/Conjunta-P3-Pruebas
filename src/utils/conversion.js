@@ -1,3 +1,4 @@
+
 function toCelsius(f) {
   if (typeof f !== "number" || !Number.isFinite(f)) {
     throw new TypeError("El valor debe ser un número finito");
