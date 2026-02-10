@@ -19,16 +19,16 @@ jobs:
           node-version: '20'
 
       - name: Lint del Código
-        run: npm exec eslint .
+        run: cd src && npm exec eslint .
 
       - name: Instalar Dependencias
-        run: npm install
+        run: cd src && npm install
 
       - name: Ejecutar Pruebas
-        run: npm test
+        run: cd src && npm test
 
       - name: Ejecutar Pruebas de Cobertura
-        run: npm run test:coverage
+        run: cd src && npm run test:coverage
 
       - name: Simular despliegue
         run: |
