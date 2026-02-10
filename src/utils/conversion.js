@@ -12,7 +12,7 @@ function toFahrenheit(c) {
   return Number(((c * 9 / 5) + 32).toFixed(1));
 }
 
-function movingAverages(series, window) {
+function movingAverage(series, window) {
   if (!Array.isArray(series) || series.some(v => typeof v !== "number" || !Number.isFinite(v))) {
     throw new TypeError("Serie inválida, debe contener solo números finitos");
   }
@@ -28,4 +28,4 @@ function movingAverages(series, window) {
   return averages;
 }
 
-module.exports = { toCelsius, toFahrenheit, movingAverages };
+module.exports = { toCelsius, toFahrenheit, movingAverage };

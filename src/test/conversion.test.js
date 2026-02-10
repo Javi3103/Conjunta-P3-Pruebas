@@ -1,4 +1,4 @@
-const { toCelsius, toFahrenheit, movingAverages } = require('../utils/conversion.js');
+const { toCelsius, toFahrenheit, movingAverage } = require('../utils/conversion.js');
 
 describe('Pruebas para funciones matemáticas', () => {
   test('Convertir Fahrenheit a Celsius', () => {
@@ -19,13 +19,13 @@ describe('Pruebas para funciones matemáticas', () => {
 
   test('Calcular promedios móviles', () => {
     const series = [10, 20, 30, 40];
-    expect(movingAverages(series, 2)).toEqual([15.00, 25.00, 35.00]);
+    expect(movingAverage(series, 2)).toEqual([15.00, 25.00, 35.00]);
 
     const series1 = [1, 2, 3];
-    expect(movingAverages(series1, 3)).toEqual([2.00]);
+    expect(movingAverage(series1, 3)).toEqual([2.00]);
 
-    expect(() => movingAverages('not an array', 3)).toThrow(TypeError);
-    expect(() => movingAverages(series, 'not a number')).toThrow(RangeError);
-    expect(() => movingAverages(series, 6)).toThrow(RangeError);
+    expect(() => movingAverage('not an array', 3)).toThrow(TypeError);
+    expect(() => movingAverage(series, 'not a number')).toThrow(RangeError);
+    expect(() => movingAverage(series, 6)).toThrow(RangeError);
   });
 });
